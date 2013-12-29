@@ -1,0 +1,10 @@
+#!/bin/bash
+DEST=$HOME/.mpd
+if [ -e $DEST ]; then
+    mv $DEST $DEST.$(date +%s)
+fi
+mkdir $DEST
+
+cat $PWD/mpd.conf | \
+    /bin/sed "s/\$USER/$USER/g" \
+    > $DEST/.mpd.conf

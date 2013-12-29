@@ -1,0 +1,5 @@
+#!/bin/bash
+DEST=$HOME
+cat $PWD/rtorrent.rc | \
+    /bin/sed "s/\$USER/$USER/g" \
+    > $DEST/.rtorrent.rc

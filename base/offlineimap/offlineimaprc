@@ -1,0 +1,38 @@
+[general]
+ui = blinkenlights
+accounts = Example Gmail
+ui = quiet
+
+[Account Example]
+localrepository = Example.Local
+remoterepository = Example.Remote
+
+[Repository Example.Local]
+type = Maildir
+localfolders = ~/.mail/example@example.com/
+
+[Repository Example.Remote]
+type = IMAP
+remotehost = imap.example.com
+ssl = yes
+remoteuser = example
+remotepass=example
+folderfolder = lambda foldername: foldername in [ 'INBOX' ]
+
+[Account Gmail]
+localrepository = Gmail.Local
+remoterepository = Gmail.Remote
+
+[Repository Gmail.Local]
+type = Maildir
+localfolders = ~/.mail/example@gmail.com/
+
+[Repository Gmail.Remote]
+type = Gmail
+realdelete = no
+remoteuser = example
+remotepass=example
+nametrans = lambda folder: {'[Gmail]/All Mail' : 'archive',
+                            '[Gmail]/Sent Mail' : 'sent'}.get(folder, folder)
+folderfilter = lambda foldername: foldername in [ 'INBOX', '[Gmail]/Sent Mail' ]
+

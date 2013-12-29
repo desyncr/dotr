@@ -1,0 +1,5 @@
+#!/bin/bash
+if [ -e $HOME/.xinitrc ]; then
+    mv $HOME/.xinitrc $HOME/.xinitrc-$(date +%s)
+fi
+ln -s $PWD/xinitrc $HOME/.xinitrc

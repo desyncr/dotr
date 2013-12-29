@@ -1,0 +1,7 @@
+#!/bin/bash
+DEST=$HOME/.ncmpcpp
+if [ -e $DEST ]; then
+    mv $DEST $DEST.$(date +%s)
+fi
+
+ln -s $PWD $DEST

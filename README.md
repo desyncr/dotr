@@ -1,51 +1,37 @@
-## Dots Template
+Misc configuration
+===
 
-This template provides a way to quickly get up and running using the `dots`
-[dotfile management utility](https://github.com/EvanPurkhiser/dots).
+``common/*`` Configuration for generic tools.
 
-### Method 1: Clone Me (Recomended)
+``development/*`` Configuration for development tools.
 
-If you would like to be able to pull in any changes made to this template, you
-may use this as the base for your dotfiles repository.
+``base/*`` Basic stuff such as ssh.
 
-Simply clone this repository `git clone https://github.com/EvanPurkhiser/dots-template`
+``machines/*`` Specific configuration for environments (ie: laptop, work, etc)
 
-### Method 2: Initalize empty
+Components
+===
 
-If you would prefer to start with a clean history and don't care or have the
-need to pull in any updates to this template repository then you can instead
-initalize a new repository with the contents of this repository.
+``base/mutt`` Mutt configuration. Only provides example configuration for IMAP/gmail accounts. ``apt-get install mutt``.
 
-```sh
-$ git clone --depth 1 https://github.com/EvanPurkhiser/dots-template
-$ rm -rf dots-template/.git
-$ git init dots-template
-```
+``base/offlineimap`` Offlineimap configuration. Also provides only example configuration. ``apt-get install offlineimap``.
 
-### Setting Up Your Dotfiles
+``common/media/mpd`` MPD daemon configuration. Remember to change music path.
 
- 1. Create configuration groups as you see fit. All directories aside from the
-    `base` directory should contain a second directory in them representing a
-    sub-configuration group.
+``common/wm/bspwm`` Provides the default xinitrc. Checkout ``desyncr/bspwmrc``.
 
-    For example you could have a `machines/desktop` configuration group for
-    your desktop and a `machines/laptop` configuration group for your laptop.
-    You could also for example have a `common/develop` for configuration files
-    specifically used for development tools.
+``machines/laptop`` SSH configuration (public key, known hosts)
 
- 2. Organize your dotfiles into their respective configuration groups.
+# Other
+===
 
- 3. Execute `source init` to install the dots manager and initialize your
-    dotfiles into ther directories.
+``common/media/ncmpcpp``
 
- 4. Execute `dots groups set [list of groups here]` then `dots install`.
+``common/media/rtorrent``
 
- 5. Enjoy your organized dotfiles!
+``common/other/irssi``
+
+``common/other/ranger``
 
 
-While not required, it's recommended to read through the [dots
-README](https://github.com/EvanPurkhiser/dots/blob/master/README.md).
 
----
-
-Don't forget to edit this README to be specific to your dotfiles!
