@@ -7,4 +7,4 @@ mkdir $DEST
 
 cat $PWD/mpd.conf | \
     /bin/sed "s/\$USER/$USER/g" \
-    > $DEST/.mpd.conf
+    > $DEST/mpd.conf
